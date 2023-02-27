@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_bill_form" model="ir.ui.view">
+            <field name="name">bill.form</field>
+            <field name="model">bill</field>
+            <field name="arch" type="xml">
+                <form string="Bill">
+                    <sheet>
+                        <group>
+                            <field name="pdf_file"/>
+                            <field name="text"/>
+                            <field name="customer_name"/>
+                            <field name="total"/>
+<!--                            <field name="qte"/>-->
+                            <field name="date"/>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+
+   </record>
+        <!-- Define the action for the "Bill" model -->
+        <record id="bill_action" model="ir.actions.act_window">
+            <field name="name">Bills</field>
+            <field name="res_model">bill</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="menu_bill" name="Bills" action="bill_action"/>
+    </data>
+</odoo>
